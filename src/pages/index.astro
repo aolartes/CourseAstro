@@ -26,8 +26,15 @@ const allPost = await Astro.glob("../content/*.md");
 	</main>
 </Layout>
 <p>
-	{allPost}
+	<ul>
+		{allPost.map((item) => (
+			<li>
+				{item?.frontmatter?.title}
+			</li>
+		))}
+	</ul>
 </p>
+
 <style>
 	main {
 		margin: auto;
