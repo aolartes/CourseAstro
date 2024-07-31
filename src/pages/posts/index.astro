@@ -1,10 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import { getCollection } from "astro:content"; // Importar el metodo para traer la información de la colección
 
-const allPost = await Astro.glob("../content/tips/*.md");
+// Validar de donde trae la información para que sea dinamicamente las rutas
+const posts = (await getCollection("tips")).sort(
+	(a, b) => a.data.pubdate.valueOf() - b.data.pubdate.valueOf(),
+); //Metodo que trae la información de la colección
+
+console.log(posts);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,22 +20,19 @@ const allPost = await Astro.glob("../content/tips/*.md");
 		<ul role="list" class="link-card-grid">
 			<!-- <Card title="Hello, Astro!" time="2024-05-07" tags="JavaScript" /> -->
 			{
-				allPost.map((item) => (
+				posts.map((post) => (
 					<Card
-						title={item?.frontmatter?.title}
-						time={item?.frontmatter?.pubdate}
-						tags={item?.frontmatter?.tags}
+						title={post.data.title}
+						time={post.data.pubdate}
+						tags={post.data.tags}
+						slug={post.slug}
 					/>
 				))
 			}
 		</ul>
 	</main>
 </Layout>
-<p>
-	<ul>
-		{allPost.map((item) => <li>{item?.frontmatter?.title}</li>)}
-	</ul>
-</p>
+
 
 <style>
 	main {
