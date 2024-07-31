@@ -12,6 +12,7 @@ const allPost = await Astro.glob("../content/tips/*.md");
 		<Header title="AstroBuild.tips" />
 		<Hero />
 		<ul role="list" class="link-card-grid">
+			
 			<!-- <Card title="Hello, Astro!" time="2024-05-07" tags="JavaScript" /> -->
 			{
 				allPost.map((item) => (
