@@ -27,11 +27,7 @@ const allPost = await Astro.glob("../content/*.md");
 </Layout>
 <p>
 	<ul>
-		{allPost.map((item) => (
-			<li>
-				{item?.frontmatter?.title}
-			</li>
-		))}
+		{allPost.map((item) => <li>{item?.frontmatter?.title}</li>)}
 	</ul>
 </p>
 
