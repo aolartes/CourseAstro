@@ -1,9 +1,10 @@
 ---
 title: "Hello JavaScript"
-pubdate: 2024-05-07
+pubdate: 2024-05-08
 description: "Hello this is my first recommendation"
-image: 
+image: "https://api.lorem.space/image/ai?w=150&h=150"
 tags: ["astro","JavaScript"]
+layout: "../../layouts/Posts.astro"
 ---
 
 Velit et est non exercitation cillum. Incididunt incididunt proident veniam non ipsum irure est sit dolore. Lorem anim commodo deserunt aute qui ea consectetur exercitation amet cupidatat nisi. Veniam laboris officia incididunt velit laboris labore deserunt non occaecat exercitation deserunt exercitation aliqua cupidatat. Reprehenderit esse veniam reprehenderit reprehenderit non. Magna id velit cupidatat ipsum aliquip. Lorem mollit nostrud cillum adipisicing nulla dolor excepteur aute et.
