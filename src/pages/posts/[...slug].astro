@@ -1,16 +1,15 @@
 ---
 import { getCollection } from "astro:content";
+import Header from "../../components/Header.tsx";
 import Base from "../../layouts/Base.astro";
 
 export async function getStaticPaths() {
-    const posts = await getCollection("tips");
-    return posts.map((post) => (
-        {
-            params: {slug: post.slug},
-            props: post,
-        }
-    ));
-};
+	const posts = await getCollection("tips");
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
 
 const post = Astro.props;
 const { Content } = await post.render();
@@ -18,5 +17,6 @@ const { Content } = await post.render();
 ---
 
 <Base title="AstroBuild.tips">
-    <Content />
+	<Header title="AstroBuild.tips" />
+	<Content />
 </Base>

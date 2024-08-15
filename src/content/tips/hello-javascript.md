@@ -1,8 +1,8 @@
 ---
 title: "Hello JavaScript"
-pubdate: 2024-05-08
+pubDate: 2024-05-07
 description: "Hello this is my first recommendation"
-image: "https://api.lorem.space/image/ai?w=150&h=150"
+image: "https://picsum.photos/200/300"
 tags: ["astro","JavaScript"]
 layout: "../../layouts/Posts.astro"
 ---

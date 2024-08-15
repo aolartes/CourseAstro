@@ -1,8 +1,8 @@
 ---
 title: "Hello World"
-pubdate: 2024-05-09
+pubDate: 2024-05-08
 description: "Hello this is my first recommendation"
-image: "https://api.lorem.space/image/ai?w=150&h=150"
+image: "https://picsum.photos/200/300"
 tags: ["astro","JavaScript"]
 layout: "../../layouts/Posts.astro"
 ---

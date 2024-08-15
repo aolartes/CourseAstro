@@ -13,9 +13,22 @@ const {
 			<span
 				class="flex flex-col sm:gap-y-2 md:flex-row md:items-center md:gap-y-0 md:divide-x md:divide-textColor"
 			>
-				<time class="pr-2">{pubDate}</time>
+				<time class="pr-2 pt-2">
+					{
+						(() => {
+							const date = new Date(pubDate);
+							const day = String(date.getDate()).padStart(2, "0");
+							const month = String(date.getMonth() + 1).padStart(
+								2,
+								"0",
+							); // Los meses van de 0 a 11
+							const year = date.getFullYear();
+							return `${day}/${month}/${year}`;
+						})()
+					}
+				</time>
 				{
-					tags.map((item) => (
+					tags.map((item: string) => (
 						<span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
 							{item}
 						</span>

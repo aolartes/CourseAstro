@@ -6,7 +6,7 @@ export default {
     useTabs: true,
     overrides: [
         {
-            files: '**/*astro',
+            files: '*.astro',
             options: {
                 parser: 'astro',
             },

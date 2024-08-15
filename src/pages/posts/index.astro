@@ -7,10 +7,12 @@ import { getCollection } from "astro:content"; // Importar el metodo para traer 
 
 // Validar de donde trae la información para que sea dinamicamente las rutas
 const posts = (await getCollection("tips")).sort(
-	(a, b) => a.data.pubdate.valueOf() - b.data.pubdate.valueOf(),
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 ); //Metodo que trae la información de la colección
 
-console.log(posts);
+// console.log(posts);
+
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -20,19 +22,28 @@ console.log(posts);
 		<ul role="list" class="link-card-grid">
 			<!-- <Card title="Hello, Astro!" time="2024-05-07" tags="JavaScript" /> -->
 			{
-				posts.map((post) => (
+				posts.map((post) => {
+					const datePub = new Date(post.data.pubDate);
+					// const dia = String(datePub.getDate()).padStart(2, '0');
+					// const mes = String(datePub.getMonth()+1).padStart(2,'0');
+					// const anio = datePub.getFullYear();
+					const [year, month, day] = datePub.toISOString().split('T')[0].split('-');
+					const formattedDate = `${day}/${month}/${year}`;
+
+
+					return(
 					<Card
 						title={post.data.title}
-						time={post.data.pubdate}
+						time={formattedDate}
 						tags={post.data.tags}
 						slug={post.slug}
 					/>
-				))
+				);
+				})
 			}
 		</ul>
 	</main>
 </Layout>
-
 
 <style>
 	main {
