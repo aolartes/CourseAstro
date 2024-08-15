@@ -1,5 +1,6 @@
 <ul class="mt-12 mb-6 flex justify-center gap-6 md:gap-8">
     <li>
+        <!-- svelte-ignore a11y-invalid-attribute -->
       <a
         href="#"
         rel="noreferrer"
@@ -18,6 +19,7 @@
     </li>
 
     <li>
+      <!-- svelte-ignore a11y-invalid-attribute -->
       <a
         href="#"
         rel="noreferrer"
@@ -36,6 +38,7 @@
     </li>
 
     <li>
+        <!-- svelte-ignore a11y-invalid-attribute -->
       <a
         href="#"
         rel="noreferrer"
@@ -52,6 +55,7 @@
     </li>
 
     <li>
+        <!-- svelte-ignore a11y-invalid-attribute -->
       <a
         href="#"
         rel="noreferrer"
@@ -70,6 +74,7 @@
     </li>
 
     <li>
+        <!-- svelte-ignore a11y-invalid-attribute -->
       <a
         href="#"
         rel="noreferrer"
